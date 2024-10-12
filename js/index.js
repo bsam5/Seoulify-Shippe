@@ -35,11 +35,13 @@ transLayer.addEventListener("click", () => toggleMenu(false));
 // start Scroll Down
 const scrollDownBeforeElement = (scrollDown, targetElement) => {
   const rect = targetElement.getBoundingClientRect();
-  const targetY = rect.top + window.scrollY;
+  let targetY = rect.top + window.scrollY;
+  targetY -= 80;
+
   scrollDown.onclick = () => window.scrollTo(0, targetY);
 };
 var scrollDown = document.querySelector(".icon-down");
-const seoulFashion = document.querySelector(".seoul-fashion");
+const seoulFashion = document.querySelector(".note");
 scrollDownBeforeElement(scrollDown, seoulFashion);
 
 // end Scroll Down
@@ -71,6 +73,9 @@ window.onscroll = () => {
 var swiper = new Swiper(".mySwiper", {
   direction: "vertical",
   scroll: true,
+  autoplay: {
+    delay: 2000,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
