@@ -1,7 +1,11 @@
 @import "base/mixin";
-@import 'base/fonts';
-@import 'base/color';
+@import "base/color";
+@import "base/fonts";
 @import "rules/global-rules";
+@import "modules/buttons";
+@import "modules/input";
 @import "layout/header";
 @import "layout/footer";
-@import 'base/style';
+@import "layout/slider";
+
+@import "base/style";

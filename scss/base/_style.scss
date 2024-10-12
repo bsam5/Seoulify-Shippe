@@ -1,0 +1,436 @@
+%link {
+  color: $black-color;
+  text-decoration: none;
+  transition: text-decoration 150ms linear;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+// Start hero
+.hreo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  .category {
+    .img-category {
+      width: 41%;
+      max-width: 229px;
+
+      position: relative;
+      .bag-img-category {
+        width: 100%;
+      }
+      .content-category {
+        position: absolute;
+        top: 50%;
+        left: -25%;
+        transform: translate(-15%, -50%);
+      }
+    }
+    .head-category {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $beige-color;
+    }
+    .text-category {
+      font-size: 3.8rem;
+      font-weight: bold;
+    }
+    .text-category {
+      font-size: 3.8rem;
+      font-weight: bold;
+
+      white-space: break-spaces;
+      margin: 10px 0 8px;
+    }
+    .link-all-category {
+      @extend %link;
+
+      font-size: 2rem;
+      font-weight: bold;
+      white-space: nowrap;
+      &:hover .icon {
+        transform: translateX(4px);
+      }
+      .icon {
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+  }
+  @include breakpoints(md) {
+    .category {
+      .img-category {
+        width: 50%;
+        .content-category {
+          transform: translate(-7%, -50%);
+        }
+      }
+    }
+  }
+  @include breakpoints(sm) {
+    .category {
+      .img-category {
+        width: 80%;
+        .content-category {
+          transform: translate(13%, -50%);
+        }
+      }
+    }
+  }
+  @include breakpoints(xs) {
+    grid-template-columns: 1fr;
+  }
+}
+// end hero
+// start note
+
+.note {
+  font-size: 2.2rem;
+  width: 100%;
+  background-color: $whit-secandry-color;
+  padding-block: 40px;
+  text-indent: 23px;
+  line-height: 1.7;
+  .bold-text {
+    font-weight: bold;
+  }
+  .plan {
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+  .link-details {
+    @extend %link;
+  }
+}
+// end note
+// start collection
+.collection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-block: 60px 45px;
+  &:nth-last-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  .content {
+    max-width: 367px;
+    .price {
+      color: $beige-color;
+    }
+  }
+  .collection-aw {
+    font-size: 3.6rem;
+  }
+  .offer {
+    font-size: 5rem;
+    font-weight: bold;
+    white-space: pre-line;
+    margin-bottom: 34px;
+  }
+  .icon {
+    vertical-align: middle;
+  }
+  .card {
+    max-width: 275px;
+
+    .img-card {
+      position: relative;
+      img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+      }
+      .btn-group {
+        position: absolute;
+        bottom: 20px;
+        bottom: 20px;
+        left: 50%;
+        width: max-content;
+        transform: translateX(-50%);
+        .btn {
+          width: 105px;
+          font-size: 1.8rem;
+        }
+        .btn-1 {
+          margin-right: 15px;
+        }
+      }
+      .ticket {
+        padding: 8px 28px;
+        border-radius: 3px;
+        color: $white;
+        font-size: 2rem;
+        background-color: $beige-color;
+        position: absolute;
+        left: 29px;
+        top: 25px;
+      }
+    }
+    .head {
+      margin-top: 15px;
+      font-size: 2rem;
+      line-height: 3.3rem;
+    }
+    .text {
+      font-size: 2.2rem;
+      line-height: 4rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .card-price {
+      font-size: 2rem;
+      font-weight: bold;
+      del {
+        margin-right: 20px;
+        color: $secandry-color;
+      }
+    }
+  }
+}
+// end collection
+// start contact
+.contact {
+  background-image: url(../../images/bg-contact.webp);
+  background-size: cover;
+  height: 450px;
+  background-position: center;
+  .body {
+    background-color: rgba(255, 255, 255, 0.93);
+    width: 100%;
+    max-width: 751px;
+    padding: 60px 15px;
+    text-align: center;
+  }
+  .heading {
+    margin-bottom: 24px;
+  }
+  .input-group {
+    margin-inline: auto;
+    margin-top: 24px;
+  }
+  .text-1 {
+    font-size: 2rem;
+  }
+  .text-2 {
+    font-size: 1.8rem;
+    margin-top: 12px;
+  }
+}
+// end contact
+// start share-seoulify
+.share-seoulify {
+  text-align: center;
+  padding: 60px 0;
+  .text {
+    margin-top: 8px;
+    svg {
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+    }
+    font-size: 2rem;
+  }
+  .link {
+    font-weight: bold;
+    @extend %link;
+  }
+  .scrol {
+    margin-top: 59px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    img {
+      width: 270px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+// end share-seoulify
+// start seoul-fashion
+.seoul-fashion {
+  padding-block: 60px 40px;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    @include breakpoints(xs) {
+      justify-content: space-evenly;
+    }
+    svg {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    path,
+    rect {
+      transition: all 150ms linear;
+    }
+
+    .link-item {
+      display: inline-block;
+      color: $black-color;
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: all 150ms linear;
+      cursor: pointer;
+    }
+  }
+  .instagram:hover {
+    color: #ff5454;
+    path {
+      fill: #ff5454;
+    }
+  }
+  .twitter:hover {
+    color: #6368ced1;
+    path {
+      fill: #6368ced1;
+    }
+  }
+  .facebook:hover {
+    color: #0866ff;
+    rect {
+      fill: #0866ff;
+    }
+  }
+  .foursquare:hover {
+    color: #82ff54;
+    path {
+      fill: #82ff54;
+    }
+  }
+  .blogs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .blog-item {
+    width: 100%;
+    max-width: 619px;
+    overflow: hidden;
+    position: relative;
+    display: inherit;
+    &.min-blog {
+      background-color: $beige-color;
+      width: 50%;
+      min-height: 397px;
+      max-width: 290px;
+      @include breakpoints(xs) {
+        width: 100%;
+        min-height: 229px;
+        max-width: none;
+      }
+    }
+    .img {
+      min-width: 100%;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+      display: block;
+    }
+    .content {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $white;
+      .head {
+        font-size: 2.2rem;
+      }
+      .text {
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 4.5rem;
+        margin-block: 12px 30px;
+      }
+    }
+  }
+}
+// end seoul-fashion
+// start features
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 40px;
+
+  .item {
+    flex-basis: 25%;
+    text-align: center;
+    position: relative;
+    &:not(:last-child)::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 35%;
+      width: 1px;
+      background-color: #d4d4d4;
+    }
+  }
+  svg {
+    width: 60px;
+    height: 60px;
+  }
+  .head {
+    margin-block: 25px 7px;
+    font-size: 2.6rem;
+    font-weight: bold;
+  }
+  .text {
+    font-size: 2rem;
+  }
+  @include breakpoints(md) {
+    grid-template-columns: repeat(3, 1fr);
+    .item {
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+  }
+  @include breakpoints(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoints(xs) {
+    grid-template-columns: 1fr;
+  }
+}
+// end features
+
+@include breakpoints(sm) {
+  .note {
+    padding-block: 25px;
+    text-indent: unset;
+  }
+  .collection {
+    padding-block: 40px 25px;
+  }
+  .contact .body {
+    padding: 45px 15px;
+  }
+  .share-seoulify {
+    padding: 40px 0;
+  }
+  .seoul-fashion {
+    padding-block: 40px 20px;
+  }
+}

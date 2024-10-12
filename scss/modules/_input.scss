@@ -1,0 +1,27 @@
+.input-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 386px;
+  .box {
+    height: 49px;
+    padding-inline: 20px;
+    font-size: 2rem;
+    border: 1px solid #b7b7b7;
+    border-right: 0px;
+    outline: none;
+    color: #b7b7b7;
+    width: 70%;
+    &::placeholder {
+      color: #b7b7b7;
+    }
+    @media (max-width: 767px) {
+      padding-inline: 10px;
+    }
+  }
+  .btn {
+    border-radius: 0;
+    padding-block: 13px;
+    width: 30%;
+  }
+}
