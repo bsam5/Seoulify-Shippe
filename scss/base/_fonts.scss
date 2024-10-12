@@ -3,11 +3,11 @@ $nova-font: "Proxima Nova";
 // Proxima Nova
 @include font-face(
   $nova-font,
-  "../../fonts/Fontspring-DEMO-proximanova-regular.otf",
+  "../fonts/Fontspring-DEMO-proximanova-regular.otf",
   400
 );
 @include font-face(
   $nova-font,
-  "../../fonts/Fontspring-DEMO-proximanova-bold.otf",
+  "../fonts/Fontspring-DEMO-proximanova-bold.otf",
   800
 );
