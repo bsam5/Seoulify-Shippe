@@ -32,17 +32,25 @@ transLayer.addEventListener("click", () => toggleMenu(false));
 
 // end Show Menu
 
-// start Scroll Down
-const scrollDownBeforeElement = (scrollDown, targetElement) => {
-  const rect = targetElement.getBoundingClientRect();
-  let targetY = rect.top + window.scrollY;
-  targetY -= 80;
+// get position elemant in page
 
-  scrollDown.onclick = () => window.scrollTo(0, targetY);
+const positionElement = (targetElement) => {
+  const rect = targetElement.getBoundingClientRect();
+  let targetX = rect.left + window.scrollX;
+  let targetY = rect.top + window.scrollY;
+  return { targetX, targetY };
 };
-var scrollDown = document.querySelector(".icon-down");
+
+// start Scroll Down
+
+const scrollDownBeforeElement = (btn, scrollX, scrollY) => {
+  btn.onclick = () => window.scrollTo(scrollX, scrollY);
+};
+const scrollDownBtn = document.querySelector(".icon-down");
 const seoulFashion = document.querySelector(".note");
-scrollDownBeforeElement(scrollDown, seoulFashion);
+let { XAxis, YAxis } = positionElement(seoulFashionElement);
+YAxis -= 80;
+scrollDownBeforeElement(scrollDownBtn, XAxis, YAxis);
 
 // end Scroll Down
 
