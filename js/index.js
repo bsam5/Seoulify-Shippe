@@ -35,21 +35,27 @@ transLayer.addEventListener("click", () => toggleMenu(false));
 // get position elemant in page
 
 const positionElement = (targetElement) => {
+  if (!targetElement) {
+    throw new Error("Target element is not found");
+  }
   const rect = targetElement.getBoundingClientRect();
-  let targetX = rect.left + window.scrollX;
-  let targetY = rect.top + window.scrollY;
-  return { targetX, targetY };
+  let XAxis = rect.left + window.scrollX;
+  let YAxis = rect.top + window.scrollY;
+  return { XAxis, YAxis };
 };
 
 // start Scroll Down
 
+const scrollDownBtn = document.querySelector(".icon-down");
+const noteElement = document.querySelector(".note");
 const scrollDownBeforeElement = (btn, scrollX, scrollY) => {
   btn.onclick = () => window.scrollTo(scrollX, scrollY);
 };
-const scrollDownBtn = document.querySelector(".icon-down");
-const seoulFashion = document.querySelector(".note");
-let { XAxis, YAxis } = positionElement(seoulFashionElement);
-YAxis -= 80;
+
+const position = positionElement(noteElement);
+const XAxis = position.XAxis;
+const YAxis = position.YAxis - 80;
+
 scrollDownBeforeElement(scrollDownBtn, XAxis, YAxis);
 
 // end Scroll Down
